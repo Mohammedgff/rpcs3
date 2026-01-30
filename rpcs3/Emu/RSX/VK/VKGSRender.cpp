@@ -659,12 +659,12 @@ VKGSRender::VKGSRender(utils::serial* ar) noexcept : GSRender(ar)
 	if (g_cfg.video.vk.asynchronous_texture_streaming)
 	{
 		// Optimistic, enable async compute
-		backend_config.supports_asynchronous_compute = true;
+		backend_config.supports_asynchronous_compute = false;
 
 		if (m_device->get_graphics_queue() == m_device->get_transfer_queue())
 		{
 			rsx_log.error("Cannot run graphics and async transfer in the same queue. Async uploads are disabled. This is a limitation of your GPU");
-			backend_config.supports_asynchronous_compute = true;
+			backend_config.supports_asynchronous_compute = false;
 		}
 	}
 
