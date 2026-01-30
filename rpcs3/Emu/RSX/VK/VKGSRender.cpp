@@ -659,7 +659,7 @@ VKGSRender::VKGSRender(utils::serial* ar) noexcept : GSRender(ar)
 	if (g_cfg.video.vk.asynchronous_texture_streaming)
 	{
 		// Optimistic, enable async compute
-		backend_config.supports_asynchronous_compute = false;
+		backend_config.supports_asynchronous_compute = true;
 
 		if (m_device->get_graphics_queue() == m_device->get_transfer_queue())
 		{
