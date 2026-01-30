@@ -680,8 +680,7 @@ VKGSRender::VKGSRender(utils::serial* ar) noexcept : GSRender(ar)
 				rsx_log.warning("Older NVIDIA cards do not meet requirements for true asynchronous compute due to some driver fakery.");
 			}
 
-			rsx_log.notice("Forcing safe async compute for NVIDIA device to avoid crashing.");
-			g_cfg.video.vk.asynchronous_scheduler.set(vk_gpu_scheduler_mode::safe);
+			
 		}
 		break;
 	case vk::driver_vendor::NVK:
