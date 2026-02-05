@@ -3,15 +3,13 @@
 #include "../Overlays/overlay_compile_notification.h"
 #include "../Overlays/Shaders/shader_loading_dialog_native.h"
 
-#include "VKAsyncScheduler.h"
-#include "VKCommandStream.h"
+#include "VKGSRender.h"
+#include "VKHelpers.h""
 #include "VKCommonPipelineLayout.h"
 #include "VKCompute.h"
-#include "VKGSRender.h"
-#include "VKHelpers.h"
 #include "VKRenderPass.h"
 #include "VKResourceManager.h"
-
+#include "VKCommandStream.h"
 #include "vkutils/buffer_object.h"
 #include "vkutils/scratch.h"
 
