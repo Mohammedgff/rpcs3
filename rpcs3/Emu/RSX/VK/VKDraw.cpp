@@ -535,11 +535,7 @@ void VKGSRender::load_texture_env()
 			async_task_scheduler->is_recording() &&
 			!async_task_scheduler->is_host_mode())
 		{
-			// Sync any async scheduler tasks
-			if (auto ev = async_task_scheduler->get_primary_sync_label())
-			{
-				ev->gpu_wait(*m_current_command_buffer, m_async_compute_dependency_info);
-			}
+			
 		}
 	}
 }
