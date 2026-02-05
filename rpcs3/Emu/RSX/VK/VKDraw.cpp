@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "../Common/BufferUtils.h"
 #include "../rsx_methods.h"
-
-#include "VKAsyncScheduler.h"
 #include "VKGSRender.h"
 #include "vkutils/buffer_object.h"
 #include "vkutils/chip_class.h"
@@ -55,7 +53,7 @@ namespace vk
 			//case VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL:
 			break;
 		case VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL:
-			//ensure(sampler_state->upload_context == rsx::texture_upload_context::blit_engine_dst);
+			ensure(sampler_state->upload_context == rsx::texture_upload_context::blit_engine_dst);
 			raw->change_layout(cmd, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
 			break;
 		case VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL:
